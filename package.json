@@ -1,0 +1,22 @@
+{
+  "name": "weather-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/necmigunduz/weather-nodejs.git"
+  },
+  "author": "Necmi Gunduz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/necmigunduz/weather-nodejs/issues"
+  },
+  "homepage": "https://github.com/necmigunduz/weather-nodejs#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
