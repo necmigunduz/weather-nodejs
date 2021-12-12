@@ -4,8 +4,8 @@ let router = require('express').Router()
 //Setup default API routes
 router.get('/', function(req, res){
     res.json({
-        status: 'API Its working!',
-        message: 'Welcome to RESTHub crafted with love!'
+        status: 'API is working!',
+        message: 'Welcome to WeatherRestAPI'
     })
 })
 //Export API routes
