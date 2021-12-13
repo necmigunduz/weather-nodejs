@@ -1,16 +1,40 @@
 // index.js
-// Import express 
 let express = require('express')
-//Import routes
-let apiRoutes = require('./api-routes')
+let bodyParser = require('body-parser')
+let mongoose = require('mongoose')
+
 // Initialize app
 let app = express()
+
+// Import API routes
+let apiRoutes = require('./api-routes')
+
+// Configure bodyparser to handle post requests
+app.use(bodyParser.urlencoded({
+    extended: true
+}))
+
+app.use(bodyParser.json())
+// Connect to Mongoose and set connection variable
+// Deprecated: mongoose.connect('mongodb://localhost/resthub');
+mongoose.connect('mongod://localhost/resthub', { userNewParser: true })
+
+var db = mongoose.connection
+
+if(!db)
+    console.log('Error connecting db')
+else
+    console.log('DB connected successfully!')
+
 // Setup server
 let port = process.env.PORT || 8080
+
 // Send message for default URL
-app.get('/', (req, res) => res.send('Hello World with Express'))
+app.get('/', (req, res) => res.send('Hello World with Express and Nodemon'))
+
 //Use API routes
 app.use('/api', apiRoutes)
+
 // Launch app to listen to specified port
 app.listen(port, function () {
     console.log("Running RestHub on port " + port)
