@@ -65,3 +65,16 @@ exports.update = function(req, res) {
         })
     })
 }
+// Handle delete
+exports.delete = function(req, res) {
+    Weather.remove({
+        _id: req.params.weather_id
+    }, function(err, weather){
+        if (err)
+            res.send(err)
+        res.json({
+            status: 'Success',
+            message: 'Weather is deleted successfully!'
+        })
+    })
+}
