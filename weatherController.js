@@ -34,4 +34,14 @@ exports.new = function(req, res) {
         })
 }
 
-// Handle weather info
+// Handle view weather info
+exports.view = function(req, res) {
+    Weather.findById(req.params.weather_id, function(err, weather){
+        if (err)
+            res.send(err)
+        res.json({
+            message: 'Weather details are loading...',
+            data: weather
+        })
+    })
+}
