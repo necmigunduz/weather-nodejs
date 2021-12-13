@@ -45,3 +45,23 @@ exports.view = function(req, res) {
         })
     })
 }
+
+// Handle update weather
+exports.update = function(req, res) {
+    Weather.findById(req.params.weather_id, function(err, weather){
+        if (err)
+            res.json(err)
+        weather.cityName = req.body.cityName ? req.body.cityName : weather.cityName
+        weather.weatherType = req.body.weatherType
+        weather.temperature = req.body.temperature
+        // Save the update weather
+        weather.save(function(err){
+            if (err)
+                res.json(err)
+            res.json({
+                message: 'Weather is updated successfully!',
+                data: weather
+            })
+        })
+    })
+}
