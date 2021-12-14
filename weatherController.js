@@ -1,5 +1,6 @@
 // Import the model
-Weather = require('./weatherModel')
+let Weather = require('./weatherModel')
+
 // Handle index actions
 exports.index = function(req, res) {
     Weather.get(function(err, citiesWeather){
@@ -65,6 +66,7 @@ exports.update = function(req, res) {
         })
     })
 }
+
 // Handle delete
 exports.delete = function(req, res) {
     Weather.remove({
