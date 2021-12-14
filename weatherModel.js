@@ -2,9 +2,9 @@
 var mongoose = require('mongoose')
 // Setup Schema
 var weatherSchema = mongoose.Schema({
-    cityName: string,
-    weatherType: string,
-    temperature: integer
+    cityName: String,
+    weatherType: String,
+    temperature: Number
 })
 
 // Export the model

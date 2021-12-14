@@ -19,7 +19,7 @@ exports.index = function(req, res) {
 
 // Handle create weather conditions
 exports.new = function(req, res) {
-    var weather = Weather.new()
+    let weather = new Weather()
     weather.cityName = req.body.cityName ? req.body.cityName : weather.cityName
     weather.weatherType = req.body.weatherType
     weather.temperature = req.body.temperature
