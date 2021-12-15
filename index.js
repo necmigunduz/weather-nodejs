@@ -3,8 +3,16 @@ let express = require('express')
 let bodyParser = require('body-parser')
 let mongoose = require('mongoose')
 
+
 // Initialize app
 let app = express()
+
+// Allow CORS
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 
 // Import API routes
 let apiRoutes = require('./api-routes')

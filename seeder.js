@@ -2,7 +2,7 @@
 let Weather = require('./weatherModel')
 // Import mongoose
 let mongoose = require('mongoose')
-const { exists } = require('./weatherModel')
+
 // Connect to Mongodb
 mongoose.connect('mongodb://localhost/resthub', { useNewUrlParser: true })
 // Define seeds
