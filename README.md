@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# BodyMonitor Api
+# Weather Api
 
 This api is the backend of the Weather app.
 
